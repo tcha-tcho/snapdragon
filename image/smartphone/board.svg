@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Motherboard" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 202 388" style="enable-background:new 0 0 202 388;" xml:space="preserve">
+<g id="XMLID_39_">
+	<path id="XMLID_368_" style="fill:#262626;" d="M40.506,386.093c-21.508,0-39.006-17.498-39.006-39.007V40.914
+		c0-21.508,17.498-39.006,39.006-39.006h120.988c21.508,0,39.006,17.498,39.006,39.006v306.172
+		c0,21.509-17.498,39.007-39.006,39.007H40.506z M21.488,217.957H101.5v-80.013H21.488V217.957z"/>
+	<path id="XMLID_363_" style="fill:#777777;" d="M161.494,2.407C182.726,2.407,200,19.681,200,40.914v306.173
+		c0,21.232-17.274,38.506-38.506,38.506H40.506C19.274,385.593,2,368.319,2,347.086V40.914C2,19.681,19.274,2.407,40.506,2.407
+		H161.494 M20.988,218.457h1H101h1v-1v-79.012v-1h-1H21.988h-1v1v79.012V218.457 M161.494,1.407H40.506
+		C18.688,1.407,1,19.095,1,40.914v306.173c0,21.819,17.688,39.506,39.506,39.506h120.988c21.819,0,39.506-17.688,39.506-39.506
+		V40.914C201,19.095,183.312,1.407,161.494,1.407L161.494,1.407z M21.988,217.457v-79.012H101v79.012H21.988L21.988,217.457z"/>
+</g>
+<g id="XMLID_233_">
+	<g id="XMLID_342_">
+		<polyline id="XMLID_347_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="43.636,87.042 21.621,109.5 
+			53.5,109.5 53.5,100 		"/>
+		<g id="XMLID_345_">
+			<circle id="XMLID_346_" style="fill:#777777;" cx="43.802" cy="86.975" r="1.429"/>
+		</g>
+		<g id="XMLID_343_">
+			<circle id="XMLID_344_" style="fill:#777777;" cx="53.932" cy="100.058" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_232_">
+	<g id="XMLID_319_">
+		<polyline id="XMLID_338_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="42.288,97.422 44.312,95.5 48.5,95.5 
+			48.5,104.5 26,104.5 		"/>
+		<g id="XMLID_334_">
+			<circle id="XMLID_337_" style="fill:#777777;" cx="42.493" cy="97.235" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_260_">
+	<g id="XMLID_328_">
+		<polyline id="XMLID_333_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="51.211,88.603 60.5,97.518 60.5,115.5 
+			28,115.5 		"/>
+		<g id="XMLID_331_">
+			<circle id="XMLID_332_" style="fill:#777777;" cx="51.206" cy="88.628" r="1.429"/>
+		</g>
+		<g id="XMLID_329_">
+			<circle id="XMLID_330_" style="fill:#777777;" cx="28.355" cy="115.451" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_335_">
+	<g id="XMLID_321_">
+		<polyline id="XMLID_326_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="43.636,230.042 21.621,252.5 
+			53.5,252.5 53.5,243 		"/>
+		<g id="XMLID_324_">
+			<circle id="XMLID_325_" style="fill:#777777;" cx="43.802" cy="230.185" r="1.429"/>
+		</g>
+		<g id="XMLID_322_">
+			<circle id="XMLID_323_" style="fill:#777777;" cx="53.932" cy="243.268" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_266_">
+	<g id="XMLID_101_">
+		<polyline id="XMLID_317_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="42.288,240.422 44.312,238.5 
+			48.5,238.5 48.5,247.5 26,247.5 		"/>
+		<g id="XMLID_315_">
+			<circle id="XMLID_316_" style="fill:#777777;" cx="42.493" cy="240.445" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_133_">
+	<g id="XMLID_309_">
+		<polyline id="XMLID_314_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="51.211,231.708 60.5,240.728 
+			60.5,258.5 28,258.5 		"/>
+		<g id="XMLID_312_">
+			<circle id="XMLID_313_" style="fill:#777777;" cx="51.206" cy="231.838" r="1.429"/>
+		</g>
+		<g id="XMLID_310_">
+			<circle id="XMLID_311_" style="fill:#777777;" cx="28.355" cy="258.661" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_259_">
+	<g id="XMLID_302_">
+		<polyline id="XMLID_307_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="22,128.5 104.395,128.5 120.5,144.69 
+			120.5,157.58 113.854,164.109 		"/>
+		<g id="XMLID_305_">
+			<circle id="XMLID_306_" style="fill:#777777;" cx="22.49" cy="128.414" r="1.429"/>
+		</g>
+		<g id="XMLID_303_">
+			<circle id="XMLID_304_" style="fill:#777777;" cx="114.163" cy="164.016" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_279_">
+	<g id="XMLID_295_">
+		<polyline id="XMLID_300_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="164.529,83.712 160.5,87.621 
+			160.5,103 		"/>
+		<g id="XMLID_298_">
+			<circle id="XMLID_299_" style="fill:#777777;" cx="164.392" cy="83.676" r="1.429"/>
+		</g>
+		<g id="XMLID_296_">
+			<circle id="XMLID_297_" style="fill:#777777;" cx="160.414" cy="102.756" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_281_">
+	<g id="XMLID_288_">
+		<polyline id="XMLID_293_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="170.502,89.692 165.5,94.504 
+			165.5,128.259 171.106,133.748 		"/>
+		<g id="XMLID_291_">
+			<circle id="XMLID_292_" style="fill:#777777;" cx="170.686" cy="89.743" r="1.429"/>
+		</g>
+		<g id="XMLID_289_">
+			<circle id="XMLID_290_" style="fill:#777777;" cx="171.407" cy="133.697" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_280_">
+	<g id="XMLID_277_">
+		<polyline id="XMLID_286_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="137.5,99 137.5,93.691 
+			158.328,114.766 		"/>
+		<g id="XMLID_284_">
+			<circle id="XMLID_285_" style="fill:#777777;" cx="137.574" cy="98.435" r="1.429"/>
+		</g>
+		<g id="XMLID_278_">
+			<circle id="XMLID_283_" style="fill:#777777;" cx="158.352" cy="114.469" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_282_">
+	<g id="XMLID_270_">
+		<polyline id="XMLID_275_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="26,266.5 73.5,266.5 73.5,260 		"/>
+		<g id="XMLID_273_">
+			<circle id="XMLID_274_" style="fill:#777777;" cx="25.577" cy="266.068" r="1.429"/>
+		</g>
+		<g id="XMLID_271_">
+			<circle id="XMLID_272_" style="fill:#777777;" cx="73.068" cy="260.244" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_336_">
+	<g id="XMLID_262_">
+		<polyline id="XMLID_268_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="73.5,234 73.5,252.5 84.333,252.5 
+			89.773,258.057 		"/>
+		<g id="XMLID_265_">
+			<circle id="XMLID_267_" style="fill:#777777;" cx="73.377" cy="233.7" r="1.429"/>
+		</g>
+		<g id="XMLID_263_">
+			<circle id="XMLID_264_" style="fill:#777777;" cx="89.661" cy="257.815" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_394_">
+	<g id="XMLID_253_">
+		<polyline id="XMLID_258_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="96.313,236.52 106.253,246.5 
+			118.593,246.5 144.5,271.881 144.5,278 		"/>
+		<g id="XMLID_256_">
+			<circle id="XMLID_257_" style="fill:#777777;" cx="96.295" cy="236.083" r="1.429"/>
+		</g>
+		<g id="XMLID_254_">
+			<circle id="XMLID_255_" style="fill:#777777;" cx="144.364" cy="277.448" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_395_">
+	<g id="XMLID_246_">
+		<polyline id="XMLID_251_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="104.045,235.348 107.262,238.5 
+			120.444,238.5 148.641,266.5 169,266.5 		"/>
+		<g id="XMLID_249_">
+			<circle id="XMLID_250_" style="fill:#777777;" cx="104.14" cy="235.849" r="1.429"/>
+		</g>
+		<g id="XMLID_247_">
+			<circle id="XMLID_248_" style="fill:#777777;" cx="169.016" cy="266.994" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_396_">
+	<g id="XMLID_239_">
+		<polyline id="XMLID_244_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="157.486,272.928 167.5,282.606 
+			167.5,271.5 177.5,271.5 177.5,262.5 151.617,262.5 136.928,247.823 		"/>
+		<g id="XMLID_242_">
+			<circle id="XMLID_243_" style="fill:#777777;" cx="157.389" cy="272.978" r="1.429"/>
+		</g>
+		<g id="XMLID_240_">
+			<circle id="XMLID_241_" style="fill:#777777;" cx="136.904" cy="247.96" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_398_">
+	<g id="XMLID_230_">
+		<polyline id="XMLID_237_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="150.98,253.696 153.875,256.5 
+			169,256.5 		"/>
+		<g id="XMLID_235_">
+			<circle id="XMLID_236_" style="fill:#777777;" cx="151.075" cy="253.746" r="1.429"/>
+		</g>
+		<g id="XMLID_231_">
+			<circle id="XMLID_234_" style="fill:#777777;" cx="169.016" cy="256.5" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_400_">
+	<g id="XMLID_222_">
+		<polyline id="XMLID_227_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="180,247.5 145.753,247.5 
+			128.5,229.604 128.5,217 		"/>
+		<g id="XMLID_225_">
+			<circle id="XMLID_226_" style="fill:#777777;" cx="179.51" cy="247.241" r="1.429"/>
+		</g>
+		<g id="XMLID_223_">
+			<circle id="XMLID_224_" style="fill:#777777;" cx="128.006" cy="217.342" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_401_">
+	<g id="XMLID_215_">
+		<polyline id="XMLID_220_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="170.706,214.669 164.5,221.003 
+			164.5,229.5 173,229.5 		"/>
+		<g id="XMLID_218_">
+			<circle id="XMLID_219_" style="fill:#777777;" cx="170.977" cy="214.793" r="1.429"/>
+		</g>
+		<g id="XMLID_216_">
+			<circle id="XMLID_217_" style="fill:#777777;" cx="173.337" cy="229.648" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_399_">
+	<g id="XMLID_208_">
+		<polyline id="XMLID_213_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="178,236.5 156.5,236.5 156.5,223.5 
+			144.5,223.5 144.5,216.5 160.568,216.5 179.5,197.152 179.5,190.5 158,190.5 		"/>
+		<g id="XMLID_211_">
+			<circle id="XMLID_212_" style="fill:#777777;" cx="177.966" cy="236.438" r="1.429"/>
+		</g>
+		<g id="XMLID_209_">
+			<circle id="XMLID_210_" style="fill:#777777;" cx="157.984" cy="190.142" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_463_">
+	<g id="XMLID_201_">
+		
+			<line id="XMLID_206_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" x1="96.993" y1="89.935" x2="105.802" y2="98.744"/>
+		<g id="XMLID_204_">
+			<circle id="XMLID_205_" style="fill:#777777;" cx="97.043" cy="89.986" r="1.429"/>
+		</g>
+		<g id="XMLID_202_">
+			<circle id="XMLID_203_" style="fill:#777777;" cx="105.751" cy="98.693" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_462_">
+	<g id="XMLID_177_">
+		<polyline id="XMLID_182_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="103.5,87 103.5,76.407 142.5,115.416 
+			142.5,107.889 157.5,122.605 157.5,130.42 175.426,148.296 		"/>
+		<g id="XMLID_180_">
+			<circle id="XMLID_181_" style="fill:#777777;" cx="103.623" cy="87.324" r="1.429"/>
+		</g>
+		<g id="XMLID_178_">
+			<circle id="XMLID_179_" style="fill:#777777;" cx="175.35" cy="148.443" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_470_">
+	<g id="XMLID_170_">
+		<polyline id="XMLID_175_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="177.222,172.065 178.5,170.719 
+			178.5,161.284 161.508,144.5 153.5,144.5 153.5,135.667 109.599,91.889 		"/>
+		<g id="XMLID_173_">
+			<circle id="XMLID_174_" style="fill:#777777;" cx="177.334" cy="172.015" r="1.429"/>
+		</g>
+		<g id="XMLID_171_">
+			<circle id="XMLID_172_" style="fill:#777777;" cx="109.588" cy="91.94" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_551_">
+	<g id="XMLID_158_">
+		<polyline id="XMLID_168_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="90.5,82 90.5,96.161 103.405,108.5 
+			113.346,108.5 140.5,135.489 140.5,140.914 151.624,152.5 161.802,152.5 170.5,161.296 170.5,169 159.852,179.5 143,179.5 		"/>
+		<g id="XMLID_163_">
+			<circle id="XMLID_167_" style="fill:#777777;" cx="90.969" cy="82.157" r="1.429"/>
+		</g>
+		<g id="XMLID_161_">
+			<circle id="XMLID_162_" style="fill:#777777;" cx="142.861" cy="179.648" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_552_">
+	<g id="XMLID_151_">
+		<polyline id="XMLID_156_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="141.5,174 141.5,149.556 149.29,157.5 
+			160.259,157.5 166.836,164.04 157.731,173.33 		"/>
+		<g id="XMLID_154_">
+			<circle id="XMLID_155_" style="fill:#777777;" cx="141.278" cy="173.744" r="1.429"/>
+		</g>
+		<g id="XMLID_152_">
+			<circle id="XMLID_153_" style="fill:#777777;" cx="157.671" cy="173.169" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_637_">
+	<g id="XMLID_117_">
+		<polyline id="XMLID_123_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="171.552,179.497 165.777,185.5 
+			150.691,185.5 146.081,190.5 134.5,190.5 134.5,139.988 109.594,114.5 99.765,114.5 87.025,102.5 80.5,102.5 80.5,95.5 84.5,95.5 
+			84.5,88.5 67,88.5 		"/>
+		<g id="XMLID_120_">
+			<circle id="XMLID_121_" style="fill:#777777;" cx="171.742" cy="179.912" r="1.429"/>
+		</g>
+		<g id="XMLID_118_">
+			<circle id="XMLID_119_" style="fill:#777777;" cx="67.552" cy="88.907" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_638_">
+	<g id="XMLID_110_">
+		<polyline id="XMLID_115_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="61.175,89.913 66.5,95.122 66.5,115.5 
+			80.012,115.5 85.478,121.5 107.481,121.5 128.5,142.514 128.5,158.506 120.5,166.403 120.5,185.975 130.133,195.5 145,195.5 		"/>
+		<g id="XMLID_113_">
+			<circle id="XMLID_114_" style="fill:#777777;" cx="61.275" cy="89.908" r="1.429"/>
+		</g>
+		<g id="XMLID_111_">
+			<circle id="XMLID_112_" style="fill:#777777;" cx="144.942" cy="195.389" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_639_">
+	<g id="XMLID_94_">
+		<polyline id="XMLID_97_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="73.5,89 73.5,109.5 84.333,109.5 
+			89.683,114.646 		"/>
+		<g id="XMLID_95_">
+			<circle id="XMLID_96_" style="fill:#777777;" cx="89.571" cy="114.515" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_550_">
+	<g id="XMLID_86_">
+		<polyline id="XMLID_92_" style="fill:none;stroke:#777777;stroke-miterlimit:10;" points="26,122.5 73.5,122.5 73.5,116 		"/>
+		<g id="XMLID_90_">
+			<circle id="XMLID_91_" style="fill:#777777;" cx="25.577" cy="122.549" r="1.429"/>
+		</g>
+	</g>
+</g>
+<g id="XMLID_23_">
+	<path id="XMLID_87_" style="fill:#777777;" d="M85.802,28.333v27.63H43.358v-27.63H85.802 M86.802,27.333H42.358v29.63h44.444
+		V27.333L86.802,27.333z"/>
+</g>
+<g id="XMLID_21_">
+	<path id="XMLID_83_" style="fill:#777777;" d="M115.432,28.333v27.63H95.21v-27.63H115.432 M116.432,27.333H94.21v29.63h22.222
+		V27.333L116.432,27.333z"/>
+</g>
+<g id="XMLID_20_">
+	<path id="XMLID_79_" style="fill:#777777;" d="M33.951,48.086v7.877H13.728v-7.877H33.951 M34.951,47.086H12.728v9.877h22.222
+		V47.086L34.951,47.086z"/>
+</g>
+<g id="XMLID_122_">
+	<path id="XMLID_75_" style="fill:#777777;" d="M133.951,28.333v27.63h-9.111v-27.63H133.951 M134.951,27.333h-11.111v29.63h11.111
+		V27.333L134.951,27.333z"/>
+</g>
+<g id="XMLID_471_">
+	<path id="XMLID_70_" style="fill:#777777;" d="M152.469,28.333v27.63h-9.111v-27.63H152.469 M153.469,27.333h-11.111v29.63h11.111
+		V27.333L153.469,27.333z"/>
+</g>
+<g id="XMLID_229_">
+	<path id="XMLID_66_" style="fill:#777777;" d="M38.272,306.111v23.926H22.988v-23.926H38.272 M39.272,305.111H21.988v25.926h17.284
+		V305.111L39.272,305.111z"/>
+</g>
+<g id="XMLID_22_">
+	<path id="XMLID_62_" style="fill:#777777;" d="M76.543,302.407v49.852H45.21v-49.852H76.543 M77.543,301.407H44.21v51.852h33.333
+		V301.407L77.543,301.407z"/>
+</g>
+<g id="XMLID_3_">
+	<path id="XMLID_58_" style="fill:#777777;" d="M119.203,302.407l31.414,31.414v18.438H85.951v-49.852H119.203 M119.617,301.407
+		H84.951v51.852h66.667v-19.852C139.12,320.911,132.114,313.904,119.617,301.407L119.617,301.407z"/>
+</g>
+<g id="XMLID_42_">
+	<path id="XMLID_47_" style="fill:#777777;" d="M189,72v213.049v0.309V358h-20v-50.728v-0.406l-0.527-0.291
+		c-8.312-8.552-13.468-13.496-21.808-21.687l-0.151,0.155L146.162,285h-0.409H13V72H189 M190,71H12v215h133.753
+		c8.485,8,13.247,12.698,22.247,21.272V359h22v-73.642v-0.309V71L190,71z"/>
+</g>
+</svg>

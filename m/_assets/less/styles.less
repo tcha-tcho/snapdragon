@@ -1,0 +1,548 @@
+/*!
+ * Bootstrap v3.3.5 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+// Reset and dependencies
+@import "normalize.less";
+@import "print.less";
+@import "fonts.less";
+
+// Core CSS
+@import "scaffolding.less";
+@import "type.less";
+//@import "code.less";
+//@import "grid.less";
+//@import "tables.less";
+@import "forms.less";
+@import "buttons.less";
+
+// Components
+//@import "component-animations.less";
+//@import "dropdowns.less";
+//@import "button-groups.less";
+//@import "input-groups.less";
+//@import "navs.less";
+//@import "navbar.less";
+//@import "breadcrumbs.less";
+//@import "pagination.less";
+//@import "pager.less";
+//@import "labels.less";
+//@import "badges.less";
+//@import "jumbotron.less";
+//@import "thumbnails.less";
+//@import "alerts.less";
+//@import "progress-bars.less";
+//@import "media.less";
+//@import "list-group.less";
+//@import "panels.less";
+@import "responsive-embed.less";
+//@import "wells.less";
+//@import "close.less";
+
+// Components w/ JavaScript
+//@import "modals.less";
+//@import "tooltip.less";
+//@import "popovers.less";
+//@import "carousel.less";
+
+// Utility classes
+@import "utilities.less";
+@import "responsive-utilities.less";
+
+html,
+body,
+#page,
+#main,
+#content,
+.hentry {
+    height: 100%;
+}
+
+body {
+    //padding-top: 56px;
+}
+
+em {
+    color: @brand-primary;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h1 {
+    position: relative;
+    top: -2px;
+    margin-bottom: 18px + 24;
+    padding: 0 @grid-gutter-width;
+    //font-size: 30px;
+    //line-height: 34px;
+    text-align: left;
+    text-transform: uppercase;
+
+    &:before {
+        content: ' ';
+        display: block;
+        position: relative;
+        top: 4px;
+        left: -@grid-gutter-width;
+        width: 12px;
+        height: 2px;
+        background: #fff;
+    }
+}
+
+h1 {
+    font-weight: 300;
+
+    em {
+        color: inherit;
+        font-weight: normal;
+    }
+}
+
+h2 {
+    margin-bottom: 24px;
+    //font-size: 22px;
+    //line-height: 24px;
+    color: @brand-primary;
+    text-align: center;
+}
+
+p {
+    margin: 0 auto 24px;
+    max-width: 576px;
+    padding: 0 @grid-gutter-width;
+}
+
+section {
+    position: relative;
+    padding: 48px 0 24px;
+    //height: 100vh;
+    //height: 100%;
+    background: @body-bg;
+
+    > p {
+        //position: absolute;
+        //top: 50%;
+        //.translate( 0, -50% )
+    }
+}
+
+.btn {
+    display: block;
+    margin: 24px auto;
+    padding: 12px 24px;
+    font-family: 'Prime', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#page {
+    margin: 0 auto;
+    //max-width: 720px;
+}
+
+.site-navigation {
+    display: none;
+}
+
+#jumbotron {
+    //padding-bottom: 48px;
+    padding-top: 0;
+    //height: 100vh;
+    height: ~"calc( 100% - 86px )";
+    background: #fff;
+    color: @gray-dark;
+    //text-align: center;
+    
+    .informe {
+        display: block;
+        //position: absolute;
+        //bottom: 72px;
+        //bottom: 48px;
+        //left: 50%;
+        margin: 0 auto ( @line-height-base * 2 );
+        //border-radius: 3px;
+        padding: 12px;
+        background-color: @body-bg;
+        //background-color: @brand-primary;
+        color: @text-color;
+        font-family: 'Prime', sans-serif;
+        font-size: 13px;
+        line-height: 1;
+        text-align: center;
+        text-transform: uppercase;
+        //.translate( -50%, 0 );
+        
+        @media ( min-width: 360px ) {
+            //bottom: 48px;
+        }
+        
+        @media ( min-width: 720px ) {
+            //bottom: 144px;
+        }
+    }
+
+    h1 {
+        font-weight: 300;
+
+        &:before {
+            background: @gray-dark;
+        }
+
+        em {
+            color: inherit;
+            font-weight: normal;
+        }
+    }
+
+    img {
+        display: block;
+        //position: absolute;
+        top: 50%;
+        left: 50%;
+        //z-index: 0;
+        margin: 0 auto;
+        width: auto;
+        height: 30vh;
+        //.translate( -50%, -50% );
+        
+        @media ( min-width: 720px ) {
+            height: 35vh;
+        }
+    }
+
+    .btn {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        .translate( -50%, 0 );
+    }
+}
+
+#coracao {
+    padding-top: 0;
+
+    img {
+        margin-bottom: 48px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+#entenda,
+//#compartilhe,
+#video,
+#saiba-mais {
+    background: #fff;
+    color: @gray-dark;
+
+    h1 {
+        &:before {
+            background: @gray-dark;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto 24px;
+    }
+}
+
+#entenda {
+    h1 {
+        em {
+            color: @brand-primary !important;
+        }
+    }
+}
+
+#compartilhe {
+    padding-bottom: 0;
+    //background-color: #eee;
+    
+    .sharebar-wrapper {
+        font-size: 48px;
+        line-height: 1;
+        text-align: center;
+        
+        ul {
+            &:extend(.list-inline all);
+            margin: 0 0 24px;
+            
+            li + li {
+                margin-left: 6px;
+            }
+            
+            
+            a {
+                display: block;
+                width: 48px;
+                color: #fff;
+            }
+        }
+    }
+    
+    #marcas-qualcomm {
+        margin-top: 48px;
+        padding-top: 48px;
+        background-color: #fff;
+    }
+    
+    img {
+        display: block;
+        margin: 0 auto 24px;
+    }
+    
+    img + img {
+        margin-bottom: 0;
+    }
+}
+
+video {
+    margin: 0 auto;
+    width: 100% !important;
+ //   height: auto !important;
+
+    @media ( min-width: 480px ) {
+        margin-top: @line-height-base;
+        padding-top: @line-height-base;
+    }
+}
+
+#adMovie {
+    margin: 0 auto @line-height-base;
+    width: 100% !important;
+    max-width: 480px;
+    //max-width: 720px;
+    height: auto !important;
+    
+    @media ( min-width: 480px ) {
+        margin-top: @line-height-base!important;
+        //height: 270px !important;
+        background: transparent !important;
+    }
+    
+    .wm-poster-wrapper,
+    img {
+        margin: 0 auto !important;
+        width: 100% !important;
+        height: auto !important;
+        
+        @media ( min-width: 480px ) {
+            margin-top: @line-height-base !important;
+            height: 270px !important;
+            //height: ( 270px * 1.5 ) !important;
+        }
+    }
+    
+    .wm-poster-play {
+        top: 50% !important;
+        left: 50% !important;
+        .translate( -50%, -50% );
+    }
+}
+
+#video {
+    padding-top: 0;
+}
+
+
+#compare {
+    min-height: 100%;
+}
+
+#diferencas {
+    img {
+        display: block;
+        margin: 0 auto @line-height-base;
+        width: 288px;
+        height: auto;
+        -webkit-transform-style: flat;
+                transform-style: flat;
+    }
+}
+
+.toogle-marca {
+    &:extend(.list-inline all);
+    margin: 0 auto;
+    margin-bottom: 36px;
+    width: 100%;
+    max-width: 576px;
+    
+    @media( min-width: 600px ) {
+        margin-top: @line-height-base;
+    }
+
+    li {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 50%;
+        background: @body-bg;
+        text-align: center;
+        .transition( all .25s );
+        
+        @media ( min-width: 480px ) {
+            border-radius: 3px;
+        }
+
+        &:after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-width: 12px;
+            margin-left: -12px;
+            .transition( all .25s );
+        }
+
+        &.active:after {
+            border-top-color: @brand-primary;
+        }
+
+        &.toggle-snapdragon.active {
+            background: @brand-primary;
+        }
+
+        &.toggle-concorrente.active {
+            background: @gray-light;
+
+            &:after {
+                border-top-color: @gray-light;
+            }
+        }
+
+        a {
+            display: block;
+            color: #fff;
+            font-family: 'Prime';
+            line-height: 48px;
+            text-transform: uppercase;
+
+            &:hover,
+            &:focus {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.concorrente {
+    display: none;
+
+    h2 {
+        color: @gray-light;
+    }
+}
+
+#nav-diferencas {
+    //overflow-x: scroll;
+    font-family: 'Prime', sans-serif;
+    font-size: 11px;
+    text-align: center;
+    text-transform: uppercase;
+
+    ul {
+        &:extend(.list-inline all);
+        margin: 0;
+
+        li {
+            padding: 6px 12px;
+            border: 2px solid transparent;
+
+            &.active {
+                //border-top-color: #fff;
+
+                a {
+                    color: #fff;
+
+                    &:hover,
+                    &:focus {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            i {
+                display: block;
+                margin: 0 auto 6px;
+            }
+        }
+    }
+
+    a {
+        color: @gray-light;
+        //.transition( all .2s );
+    }
+}
+
+#saiba-mais {
+    ul {
+        &:extend(.list-unstyled all);
+        margin-bottom: 0;
+        font-family: 'Prime', sans-serif;
+        text-align: center;
+        
+        padding: 0 24px;
+        
+        li {
+            margin-bottom: 24px;
+            
+            @media ( min-width: 600px ) {
+                display: inline-block;
+                max-width: 180px;
+                vertical-align: top;
+            }
+            
+            & + li {
+                @media ( min-width: 600px ) {
+                    margin-left: 24px;
+                }
+            }
+            
+            a {
+                color: @gray-dark;
+            }
+        }
+    }
+    
+    img {
+        margin-bottom: 12px;
+        border-radius: 3px;
+    }
+}
+
+// barra globo e techtudo
+#header-produto {
+    //position: absolute;
+    
+    h1 {
+        &:before {
+            content: none;
+        }
+    }
+    
+    .use-vintage {
+        //display: none;
+    }
+    
+    .menu-label {
+        margin-top: 0;
+    }
+}

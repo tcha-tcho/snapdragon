@@ -1,0 +1,9 @@
+.font-face( @font-family; @url; @font-weight; @font-style ) {
+    @font-face {
+        font-family: @font-family;
+        src: url( '@{url}.eot' );
+        src: url( '@{url}.eot?#iefix' ) format( 'embedded-opentype' ), url( '@{url}.woff' ) format( 'woff' ), url( '@{url}.ttf' ) format( 'truetype' ), url( '@{url}.svg#@font-family' ) format( 'svg' );
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}

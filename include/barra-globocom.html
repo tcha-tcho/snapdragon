@@ -1,0 +1,41 @@
+<style>body{margin:0}</style>
+<div class="robots-nocontent robots-noindex">
+	<script type="text/javascript">
+    var novaBarrinha = "false";
+    if(novaBarrinha == "true"){
+    var urlLogin = "https://login.globo.com/login/3735";
+    var urlLogout = "https://login.globo.com/logout";
+    var urlIntervention = "http://s.glbimg.com/gl/ba/barra-globocom.callback.html"
+    var glb = glb || {};
+    glb.barra = {
+    exibeAssineJa: false,
+    exibeCentral: false
+    };
+    (function() {
+    var s = document.createElement("script");
+    s.type = "text/javascript"; s.async = true; s.charset = "utf-8";
+    s.src = "http://barra.globo.com/nova/js/barra-globocom.min.js";
+    var ss = document.getElementsByTagName("script")[0]; ss.parentNode.insertBefore(s, ss);
+    })();
+    var urlCallback = encodeURIComponent(urlIntervention);
+    var objGlbConfig = {loginUrl:urlLogin,logoutUrl:urlLogout,loginCallback:urlCallback};
+    $( document ).ready(function() {
+    $.extend(glb.barra.options,objGlbConfig);
+    });
+    } else {
+    var glb = glb || {};
+    glb.barra = {
+    exibeAssineJa: false,
+    exibeCentral: false
+    };
+    (function() {
+    var s = document.createElement("script");
+    s.type = "text/javascript"; s.async = true; s.charset = "utf-8";
+    s.src = "http://barra.globo.com/nova/js/barra-globocom.min.js";
+    var ss = document.getElementsByTagName("script")[0]; ss.parentNode.insertBefore(s, ss);
+    })();
+    }
+    </script>
+    <!-- <link rel="stylesheet" href="http://s.glbimg.com/gl/ba/css/barra-globocom.min.css" /> -->
+    <link rel="stylesheet" href="http://barra.globo.com/nova/css/barra-globocom.min.css" type="text/css" />
+</div>
