@@ -122,6 +122,11 @@ a:focus {
 }*/
 
 
+#featureMenu, #featureSwitch, #featureSwitch p {
+  display: none;
+}
+
+
 #triggerHolder{
 	width: 100%;
 	height: 10000px;

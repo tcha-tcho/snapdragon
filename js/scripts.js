@@ -30,7 +30,6 @@ var init = function(){
 	$('.trigger').height($(window).height()*0.7);
 	$('.triggerHolder').height($('.trigger').length*($(window).height()*0.7));
 	$("#hand, #smartphone").width(screenMaxWidth);
-	$("#featureMenu, #featureSwitch, #featureSwitch p").hide();
 	
 	
 	scenes = [];
