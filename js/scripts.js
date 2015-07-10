@@ -6,6 +6,7 @@ var scrollController;
 var initialized = [];
 var currentTrigger = -1;
 var prevPos = 0;
+var currPos = 0;
 
 
 var init = function(){
@@ -254,189 +255,248 @@ var initNav = function(){
 		}
 	});	
 
-	$(document).on("scroll", function (e) {
-		var currPos = $(document).scrollTop();
-		if(currPos < $("#trigger1").offset().top+20){
-			TweenMax.to(".contentBlock:not(#scr1)", 0.05, {autoAlpha:0});
-			TweenMax.to("#scr1", 0.05, {autoAlpha:1});
-		}else if(currPos < $("#trigger2").offset().top+20){
-			TweenMax.to(".contentBlock:not(#scr1, #scr2)", 0.05, {autoAlpha:0});
-			TweenMax.to("#scr2", 0.05, {autoAlpha:1});
-		}
+	/**
+	 * Cache para todos os seletores usados no scroll
+	 * Uso intensivo de seletores em um bind como o scroll
+	 * pode diminuir a performance
+	 * @type {jQuery}
+	 */
+	var $document   = $(document);
+	var $body       = $("body");
+	var $window     = $(window);
+	var $trigger    = $(".trigger");
+	var $trigger1   = $("#trigger1");
+	var $trigger2   = $("#trigger2");
+	var $trigger10  = $("#trigger10");
+	var $trigger11  = $("#trigger11");
+	var $trigger12  = $("#trigger12");
+	var $videogame  = $("#video-game");
+	var $videovideo = $("#video-video");
+	var $audio      = $("#audio");
+	var $bullets    = $("#bullets ul li a");
+	var $nav1       = $("#navItem1");
+	var $nav2       = $("#navItem2");
+	var $nav3       = $("#navItem3");
+	var $nav4       = $("#navItem4");
 
-		//console.log(currPos);
-		for(var i=0; i<$(".trigger").length; i++){
-			var tId = $(".trigger").eq(i).prop("id");
-			//console.log($(".trigger").eq(i).offset().top);
+	var tIds = [];
+	$trigger.each(function(trig, i){
+		tIds[i] = $trigger.eq(i).prop("id");
+	})
+	
+	var trigger_tops = [];
+	var len_triggers = $trigger.length;
+	var tops_ready   = false
 
-			if(currPos >= prevPos){// is scrolling down
-				if(	i > currentTrigger && 
-					( currPos >= $(".trigger").eq(i).offset().top-15 && currPos < $(".trigger").eq(i).offset().top+15) &&
-					( i < $(".trigger").length-1 || currPos < $(".trigger").eq(i+1).offset().top+15) ) {
-						currentTrigger = i;
-						break;
-				}
-			}else{// is scrolling up
-				if(	i < currentTrigger && 
-					(currPos >= $(".trigger").eq(i).offset().top-15 && currPos < $(".trigger").eq(i).offset().top+15) &&
-					( i < $(".trigger").length-1 || currPos < $(".trigger").eq(i+1).offset().top+15) ) {
-						currentTrigger = i;
-						break;
-				}
-			}
-		}
+	$document.on("scroll", function (e) {
+		// caching tops
+		if (!tops_ready) {
+			for(var i=0; i<len_triggers; i++) {
+		  	trigger_tops.push($trigger.eq(i).offset().top);
+			};
+			tops_ready = true;
+		};
 
-		prevPos = currPos;
+		currPos = $document.scrollTop();
+
+		/*
+		Essa parte está conflitando com o Tween feito para a Cena
+		 */
+		// if(currPos < $trigger1.offset().top-80000){
+		// 	TweenMax.to(".contentBlock:not(#scr1)", 0.05, {autoAlpha:0});
+		// 	TweenMax.to("#scr1", 0.05, {autoAlpha:1});
+		// }else if(currPos < $trigger2.offset().top+20){
+			// TweenMax.to(".contentBlock:not(#scr1, #scr2)", 0.05, {autoAlpha:0});
+			// TweenMax.to("#scr2", 0.05, {autoAlpha:1});
+		// }
+
+		$audio.trigger('pause');
 
 		//quando parar o scroll
 		clearTimeout($.data(this, 'scrollTimer'));
 	    $.data(this, 'scrollTimer', setTimeout(function() {
+
+	    	/**
+	    	 * Não há necessidade de adquirir o currentTrigger a cada scroll
+	    	 * Ele só é usado depois do clearTimeout
+	    	 * Podemos adquirir ele aqui
+	    	 */
+	    	var len_tops  = len_triggers;
+	    	var diff = 15;
+
+  			for(var i=0; i<len_tops; i++) {
+		    	var trigger_top      = trigger_tops[i];
+		    	var trigger_next_top = trigger_tops[i+1];
+					if (currPos >= trigger_top && currPos < trigger_next_top) {
+						currentTrigger = i;
+						break;
+					};
+				}
+
+				prevPos = currPos;
+
 	    	console.log(currentTrigger);
+
+	    	// default actions
+				$videogame.get(0).pause();
+				$videovideo.get(0).pause();
+				$bullets.removeClass("selected");
+
 	    	// coloque os trackers do analytics
-	        	if(currentTrigger == 0){
-					
-				} else if(currentTrigger == 1){
+	    	/*
+	    	Usar o switch ao invez do ifelse pela performance
+	    	 */
+	    	switch(currentTrigger) {
+			    case 0:
+			    		// Estas são as bolinhas de navegação
+							$nav1.addClass("selected");
+			        break;
+			    case 1:
+    					$nav2.addClass("selected");
+			        break;
+			    case 2:
+    					// tela 'conheça'
+							_gaq.push(['_trackEvent', 'troca-tela', '1', '',0,true]);
+    					$nav2.addClass("selected");
+			        break;
+			    case 3:
+    					$nav2.addClass("selected");
+			        break;
+			    case 4:
+    					$nav2.addClass("selected");
+			        break;
+			    case 5:
+    					// tela 'atributos celular explodido'
+							_gaq.push(['_trackEvent', 'troca-tela', '2', '',0,true]);
+							// atributo
+							if($body.hasClass('generico')) {
+								_gaq.push(['_trackEvent', 'conheca', 'conectividade', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'conectividade', 'outras marcas']);
+							}
+    					$nav2.addClass("selected");
+			        break;
+			    case 6:
+    					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'games', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'games', 'outras marcas']);
+							}
+    					$nav2.addClass("selected");
+			        break;
+			    case 7:
+    					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'apps', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'apps', 'outras marcas']);
+							}
 
-				} else if(currentTrigger == 2){
-					// tela 'conheça'
-					_gaq.push(['_trackEvent', 'troca-tela', '1', '',0,true]);
-					
-				} else if(currentTrigger == 3){
-					
-				} else if(currentTrigger == 4){
-					
-				} else if(currentTrigger == 5){
-					
-					// tela 'atributos celular explodido'
-					_gaq.push(['_trackEvent', 'troca-tela', '2', '',0,true]);
-					// atributo
-					if($('body').hasClass('generico')) {
-						_gaq.push(['_trackEvent', 'conheca', 'conectividade', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'conectividade', 'outras marcas']);
-					}
-					
-				} else if(currentTrigger == 6){
-					
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'games', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'games', 'outras marcas']);
-					}
-				} else if(currentTrigger == 7){
-					
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'apps', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'apps', 'outras marcas']);
-					}
-					
-				} else if(currentTrigger == 8){
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'video', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'video', 'outras marcas']);	
-					}
-					
-				} else if(currentTrigger == 9){
-					
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'fotos', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'fotos', 'outras marcas']);
-					}
-					
-				} else if(currentTrigger == 10){
-					
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'audio', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'audio', 'outras marcas']);
-					}
-					
-				} else if(currentTrigger == 11){
-					
-					// atributo
-					if($('body').hasClass('generico')) { 
-						_gaq.push(['_trackEvent', 'conheca', 'bateria', 'snapdragon']);
-					} else {
-						_gaq.push(['_trackEvent', 'conheca', 'bateria', 'outras marcas']);
-					}
-				} else if(currentTrigger == 12){
-					
-				} else if(currentTrigger == 13){
-					
-					// tela 'video 30s'
-					_gaq.push(['_trackEvent', 'troca-tela', '3', '',0,true]);
-					
-				} else if(currentTrigger == 14){
-					// tela 'compartilhe'
-				    _gaq.push(['_trackEvent', 'troca-tela', '4', '',0,true]);
+							// VIDEO
+							// toca o video de games no ponto certo
+							if(!$body.hasClass('generico')) {
+								$videogame.get(0).play();
+							}else{
+								$videogame.get(0).pause();
+							}
+
+    					$nav2.addClass("selected");
+			        break;
+			    case 8:
+	  					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'video', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'video', 'outras marcas']);	
+							}
+    					$nav2.addClass("selected");
+			        break;
+			    case 9:
+    					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'fotos', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'fotos', 'outras marcas']);
+							}
+    					$nav2.addClass("selected");
+			        break;
+			    case 10:
+    					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'audio', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'audio', 'outras marcas']);
+							}
+    					$nav2.addClass("selected");
+			        break;
+			    case 11:
+    					// atributo
+							if($body.hasClass('generico')) { 
+								_gaq.push(['_trackEvent', 'conheca', 'bateria', 'snapdragon']);
+							} else {
+								_gaq.push(['_trackEvent', 'conheca', 'bateria', 'outras marcas']);
+							}
+							$nav3.addClass("selected");
+			        break;
+			    case 12:
+    					$nav3.addClass("selected");
+			        break;
+			    case 13:
+							// tela 'video 30s'
+							_gaq.push(['_trackEvent', 'troca-tela', '3', '',0,true]);
+							$nav3.addClass("selected");
+			        break;
+			    case 14:
+    					// tela 'compartilhe'
+					    _gaq.push(['_trackEvent', 'troca-tela', '4', '',0,true]);
+    					$nav4.addClass("selected");
+			        break;
+			    default:
+				    	// é o 15 - final da página
+					    _gaq.push(['_trackEvent', 'final', 'final']);
+    					$nav4.addClass("selected");
 				}
 
-				if($(window).scrollTop() + $(window).height() == $(document).height()) {
-				       // chegou ao final do página
-				    _gaq.push(['_trackEvent', 'final', 'final']);
-				}
 
-
-
-				// toca o video de games no ponto certo
-				if(currentTrigger == 7){
-					if(!$('body').hasClass('generico')) {
-						$("#video-game").get(0).play();
-					}else{
-						$("#video-game").get(0).pause();
-					}
-
-				}else{
-					$("#video-game").get(0).pause();
-				}
 
 				// toca o video de games no ponto certo
 				
-				if(currPos >= $("#trigger10").offset().top && currPos < $("#trigger11").offset().top-10){
-					if(!$('body').hasClass('generico')) {
-						$("#video-video").get(0).play();
-					}else{
-						$("#video-video").get(0).pause();
+				if(!$body.hasClass('generico')) {
+					if(currPos >= $trigger10.offset().top && currPos < $trigger11.offset().top-10){
+						$videovideo.get(0).play();
 					}
-				}else{
-					$("#video-video").get(0).pause();
-				}
+					/** 
+					 * Função está duplicada com o item no case 7
+					 */
+					// toca o video no ponto certo
+					if(currPos >= $trigger10.offset().top+100 && currPos <= $trigger11.offset().top-20 ){
+						$audio.prop("currentTime",0);
+						$audio.trigger('play');
+					}
+				};
 
-				// toca o video no ponto certo
-				if(currPos >= $("#trigger11").offset().top-20 && currPos <= $("#trigger12").offset().top+20 ){
-					if(!$('body').hasClass('generico')) {
-						$("#audio").trigger('play');
-					}else{
-						$("#audio").trigger('pause');
-					$("#audio").prop("currentTime",0);
-					}
-				}else{
-					$("#audio").trigger('pause');
-					$("#audio").prop("currentTime",0);
-				}
+
+				/**
+				 * Sem celular disponível para esta versão
+				 * Esta parte será suprimida
+				 */
 				// esconde feature menus se não estiver no celular explodido
-				if(currentTrigger > 5 && currentTrigger < 12 && $(".trigger").eq(currentTrigger).length > 0 && 
-						currPos >= $(".trigger").eq(currentTrigger).offset().top-5 &&
-						currPos < $(".trigger").eq(currentTrigger).offset().top+5 ){
+				// if(currentTrigger > 5 && currentTrigger < 12 && $trigger.eq(currentTrigger).length > 0 && 
+				// 		currPos >= $trigger.eq(currentTrigger).offset().top-5 &&
+				// 		currPos < $trigger.eq(currentTrigger).offset().top+5 ){
 					
-					TweenMax.set("#phoneExtras div", {autoAlpha:0});
-					TweenMax.set("#icon"+(currentTrigger-5), {autoAlpha:1});
-					TweenMax.set(".contentBlock:not(#scr"+(currentTrigger-3)+")", {autoAlpha:0});
-					TweenMax.to("#featureMenu, #featureSwitch", 0.05, {autoAlpha:1});
-					TweenMax.set("#scr"+(currentTrigger-3), {autoAlpha:1});
+				// 	TweenMax.set("#phoneExtras div", {autoAlpha:0});
+				// 	TweenMax.set("#icon"+(currentTrigger-5), {autoAlpha:1});
+				// 	TweenMax.set(".contentBlock:not(#scr"+(currentTrigger-3)+")", {autoAlpha:0});
+				// 	TweenMax.to("#featureMenu, #featureSwitch", 0.05, {autoAlpha:1});
+				// 	TweenMax.set("#scr"+(currentTrigger-3), {autoAlpha:1});
 
-					if($("#phoneNav"+(currentTrigger-4)).length){
-						TweenMax.set("#phoneNav"+(currentTrigger-4), {autoAlpha:1});
-					}
-				}
+				// 	if($("#phoneNav"+(currentTrigger-4)).length){
+				// 		TweenMax.set("#phoneNav"+(currentTrigger-4), {autoAlpha:1});
+				// 	}
+				// }
+				
 				/*else if(currPos < $("#trigger1").offset().top+20){
 					TweenMax.to(".contentBlock:not(#scr1)", 0.05, {autoAlpha:0});
 					TweenMax.to("#scr1", 0.05, {autoAlpha:1});
@@ -445,22 +505,7 @@ var initNav = function(){
 					TweenMax.to("#scr2", 0.05, {autoAlpha:1});
 				}*/
 
-				// marca as bolinhas de navegação
-				
-				if(currentTrigger ==0){
-					$("#bullets ul li a").removeClass("selected");
-					$("#navItem1").addClass("selected");
-				}else if(currentTrigger >=1 && currentTrigger < 11){
-					$("#bullets ul li a").removeClass("selected");
-					$("#navItem2").addClass("selected");
-				}else if(currentTrigger >=11&& currentTrigger <= 13){
-					$("#bullets ul li a").removeClass("selected");
-					$("#navItem3").addClass("selected");
-				}else if(currentTrigger > 13){
-					$("#bullets ul li a").removeClass("selected");
-					$("#navItem4").addClass("selected");
-				}
-	    }, 350));
+	    }, 100));
 		
 	});	
 }
@@ -570,4 +615,8 @@ $(window).load(function() {
 		$(this).insertClass('selected');
 	});*/
 	//$('#introMovie').get(0).play();
+});
+
+$(window).on('beforeunload', function() {
+  $(window).scrollTop(0);
 });
