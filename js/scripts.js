@@ -214,7 +214,9 @@ var init = function(){
 			}
 
 			if(i >=5 && i<=12){
-				$("#featureMenu, #featureSwitch, #featureSwitch p").show();
+				if (tops_ready) {
+					$("#featureMenu, #featureSwitch, #featureSwitch p").show();
+				};
 				$("#featureMenu ul li a").removeClass("selected");
 				$("#nav"+(i-4)).addClass("selected");
 				//nav problem on exploded view
