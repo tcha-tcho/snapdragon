@@ -276,7 +276,7 @@ a:focus {
 	object-fit: cover;
 }
 
-.contentBlock{
+.contentBlock, .feature {
 	width: 40%;height: 100%;
 	right:0;
 	position: fixed;
@@ -291,7 +291,7 @@ a:focus {
 }
 
 
-.contentBlock p {
+.contentBlock p, .feature p {
 	color: #dedede; 
 	line-height: 1.4em;
 	width: 16em;
@@ -306,14 +306,14 @@ a:focus {
 	transform: translate(0, -50%);
 }
 
-.contentBlock p strong {
+.contentBlock p strong, .feature p strong {
   color: #c12f37;
   text-transform:uppercase;
   font-weight:bold;
   text-shadow:none;
 }
 
-.contentBlock p span.title {
+.contentBlock p span.title, .feature p span.title{
   color: #c12f37;
   font-size: 1.4em;
   font-weight:bold;
@@ -321,11 +321,11 @@ a:focus {
   margin-bottom: 1em;
 }
 
-.contentBlock p.text-g span.title {
+.contentBlock p.text-g span.title, .feature p.text-g span.title {
   color: #777;
 }
 
-.contentBlock h1{
+.contentBlock h1, .feature h1 {
 	width:100%;
 	position: absolute;
 	top:-10%;
@@ -345,7 +345,7 @@ a:focus {
 	
 }
 
-.contentBlock h1 span.topLine{
+.contentBlock h1 span.topLine, .feature h1 span.topLine {
 	width: 1em; height: 0.1em;
 	position: absolute; top:0.3em; left: -2em;
 	background: #fff;

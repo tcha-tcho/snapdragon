@@ -8,6 +8,11 @@ var currentTrigger = -1;
 var prevPos = 0;
 var currPos = 0;
 
+var $videogame    = $("#video-game");
+var $videovideo   = $("#video-video");
+var $audio        = $("#audio");
+
+
 
 var init = function(){
 	screenMaxWidth = Math.round($(window).height()*1.667);
@@ -15,6 +20,7 @@ var init = function(){
 	$('.trigger').height($(window).height()*0.7);
 	$('.triggerHolder').height($('.trigger').length*($(window).height()*0.7));
 	$("#hand, #smartphone").width(screenMaxWidth);
+	$("#featureMenu, #featureSwitch, #featureSwitch p").hide();
 	
 	
 	scenes = [];
@@ -27,7 +33,7 @@ var init = function(){
 	// correspondente no html
 	tweens[0] = new TimelineMax();
 	tweens[0].insert(TweenMax.to(".contentBlock", 0.1, {autoAlpha:0}),0);
-	tweens[0].insert(TweenMax.to("#featureMenu, #featureSwitch, #phoneExtras", 0.1, {autoAlpha:0}), 0);
+	// tweens[0].insert(TweenMax.to("#featureMenu, #featureSwitch", 0.01, {autoAlpha:0}), 0);
 	tweens[0].insert(TweenMax.to("#scr1", 0.1, {x:0, autoAlpha: 1}),0);
 	tweens[0].insert(TweenMax.to("#bgVideo1", 0.5, {scale:1}),0);
 					
@@ -39,17 +45,17 @@ var init = function(){
 	tweens[1].insert(TweenMax.fromTo("#scr1 #logo img", 0.5, {x:0, autoAlpha: 1}, {x:+200, autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#label-publieditorial", 0.5, {autoAlpha: 1}, {autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#phoneBt1", 0.1, {autoAlpha:0}, {autoAlpha:1}),0);
-	tweens[1].insert(TweenMax.fromTo("#smartphone img", 1, {height: "1300%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
-	tweens[1].insert(TweenMax.fromTo("#hand img", 1, {height: "1300%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
+	tweens[1].insert(TweenMax.fromTo("#smartphone img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
+	tweens[1].insert(TweenMax.fromTo("#hand img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
 	tweens[1].insert(TweenMax.fromTo("#background", 0.3, {width:"100%"}, {width:screenMaxWidth, "transform-origin": "50% 50%", ease:Linear.easeNone}),0);
 	tweens[1].insert(TweenMax.fromTo("#bgVideo1", 0.3, {width:"100%"},{width:screenMaxWidth*0.14, "transform-origin": "50% 50%", ease:Linear.easeNone, delay:1}),0);
 	tweens[1].insert(TweenMax.fromTo("#bgVideo1", 0.1, {top:"50%", height: "100%"}, {top:"49%", height:"40%", "transform-origin": "50% 50%", ease:Linear.easeNone, delay:1.2}),0);
 	// tweens[1].insert(TweenMax.to("#scr2, #scr2 p", 1, {autoAlpha:1}), 1);
 	
-	//tweens[1].insert(TweenMax.to("#featureMenu, #featureSwitch, #phoneExtras", 0.1, {autoAlpha:0}), 0);
+	//tweens[1].insert(TweenMax.to("#featureMenu, #featureSwitch", 0.1, {autoAlpha:0}), 0);
 	
 	tweens[2] = new TimelineMax();
-	tweens[2].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras, #phoneParts", {autoAlpha:0}), 0);
+	tweens[2].insert(TweenMax.set("#phoneParts", {autoAlpha:0}), 0);
 	tweens[2].insert(TweenMax.fromTo("#scr1", 0.1, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.fromTo("#scr2", 0.5, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.fromTo("#bgVideo1", 0.5, {autoAlpha:1}, {autoAlpha:0}),0.3);
@@ -61,7 +67,7 @@ var init = function(){
 	
 	tweens[3] = new TimelineMax()
 		.to(".contentBlock", 0.01, {autoAlpha:0})
-		.to("#featureMenu, #featureSwitch, #phoneExtras", 0.1, {autoAlpha:0})
+		// .to("#featureMenu, #featureSwitch", 0.1, {autoAlpha:0})
 		//problem with phone not well mounted
 		.to("#phoneBack", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
 		.to("#phoneBoard", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
@@ -110,25 +116,25 @@ var init = function(){
 		tweens[i] = new TimelineMax();
 
 			if(i!=5){
-				tweens[i].insert(TweenMax.to("#scr"+(i-3), 0.1, {x:40, autoAlpha: 0}), 0);
+				// tweens[i].insert(TweenMax.to("#scr"+(i-3), 0.01, {autoAlpha: 1}), 0.01);
 			}
-			tweens[i].insert(TweenMax.to("#featureMenu, #featureSwitch, #featureSwitch p", 0.1, {autoAlpha:1}),0);
-			tweens[i].insert(TweenMax.to("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5, #phoneExtras div", 0.05, {autoAlpha:0}), 0);
-			tweens[i].insert(TweenMax.to("#scr"+(i-2)+", #scr"+(i-2)+" p", 0.1, {autoAlpha: 1}), 0.1);
+			// tweens[i].insert(TweenMax.to("#featureMenu, #featureSwitch, #featureSwitch p", 0.01, {autoAlpha:1}),0.01);
+			// tweens[i].insert(TweenMax.to("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5", 0.01, {autoAlpha:0}), 0.01);
+			// tweens[i].insert(TweenMax.to("#scr"+(i-2)+", #scr"+(i-2)+" p", 0.01, {autoAlpha: 1}), 0.01);
 
-			tweens[i].insert(TweenMax.to("#phoneExtras", 0.1, {autoAlpha:1}), 0);
-			tweens[i].insert(TweenMax.to("#icon"+(i-4), 0.1, {autoAlpha:1}), 0);
+			// tweens[i].insert(TweenMax.to("#phoneExtras", 0.01, {autoAlpha:1}), 0.01);
+			// tweens[i].insert(TweenMax.to("#icon"+(i-4), 0.01, {autoAlpha:1}), 0.01);
 
 			if($("#phoneNav"+(i-4)).length){
-				tweens[i].insert(TweenMax.to("#phoneNav"+(i-4), 0.1, {autoAlpha:1}), 0);
+				// tweens[i].insert(TweenMax.to("#phoneNav"+(i-4), 0.01, {autoAlpha:1}), 0.01);
 			}
 	}
 		
 	tweens[12] = new TimelineMax();
-		tweens[12].insert(TweenMax.to("#featureMenu, #featureSwitch, #phoneExtras", 0.2, {autoAlpha:0}), 0);
+		// tweens[12].insert(TweenMax.to("#featureMenu, #featureSwitch", 0.2, {autoAlpha:0}), 0);
 		tweens[12].insert(TweenMax.to(".contentBlock:not(#scr10, #scr11)", 0.1, {autoAlpha:0}),0);
 		tweens[12].insert(TweenMax.to("#scr9", 0.4, {autoAlpha:0}), 0);
-		tweens[12].insert(TweenMax.to("#phoneExtras", 0.2, {autoAlpha:0}), 0);
+		// tweens[12].insert(TweenMax.to("#phoneExtras", 0.2, {autoAlpha:0}), 0);
 		tweens[12].insert(TweenMax.fromTo("#phoneBack", 1, {top: "25%"}, {top: "16%"}), 0);
 		tweens[12].insert(TweenMax.fromTo("#phoneBoard", 1, {top: "15%"}, {top: "15%"}), 0);
 		tweens[12].insert(TweenMax.fromTo("#phoneFront", 1, {top: "5%"}, {top: "14%", alpha:1}), 0);
@@ -143,7 +149,7 @@ var init = function(){
 
 		tweens[13] = new TimelineMax();
 		//tweens[13].insert(TweenMax.to(".contentBlock:not(#scr10, #scr11)", 0.1, {autoAlpha:0}),0);
-		tweens[13].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}));
+		// tweens[13].insert(TweenMax.set("#featureMenu, #featureSwitch", {autoAlpha:0}));
 		//tweens[13].insert(TweenMax.to("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5", 0.2, {autoAlpha:0}));
 		tweens[13].insert(TweenMax.to("#scr11, #scr11 p", 0.1, {autoAlpha: 1}),0);
 		//tweens[13].insert(TweenMax.to("#scr10", 1, {autoAlpha:1}),0);
@@ -153,11 +159,13 @@ var init = function(){
 		
 		
 		tweens[14] = new TimelineMax();
-		tweens[14].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}));
+		// tweens[14].insert(TweenMax.set("#featureMenu, #featureSwitch", {autoAlpha:0}));
 		//tweens[14].insert(TweenMax.set(".contentBlock:not(#scr10,#scr11)", {autoAlpha:0}));
 		//tweens[14].insert(TweenMax.to("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5", 0.2, {autoAlpha:0, delay:0.5}));
 		tweens[14].insert(TweenMax.to("#scr11", 0.5, {y:-($(window).height()/2), autoAlpha:1}));
 		
+
+	var force_visible = {display: "block", visibility: "visible", opacity: "1"};
 
 	for(var i=0; i< tweens.length; i++){
 		var tw = tweens[i];
@@ -179,11 +187,47 @@ var init = function(){
 		scenes[i].on("enter", function(){
 			var i = scenes.indexOf(this);
 			
+			$(".feature").hide();
+			$("#phoneExtras div").hide();
+			$("#audio").trigger('pause');
+			$(".phonenav").hide();
+			$("#video-video, #video-game").get(0).pause();
+
 			if(i >=5 && i<=12){
+				$("#featureMenu, #featureSwitch, #featureSwitch p").show();
 				$("#featureMenu ul li a").removeClass("selected");
 				$("#nav"+(i-4)).addClass("selected");
-				// $(".feature").hide();
-				// $("#scr"+(i-2)).show();
+				//nav problem on exploded view
+				$("#scr"+(i-2)).css(force_visible);
+				$("#phoneExtras").css(force_visible);
+				$("#icon"+(i-4)).css(force_visible);
+				$("#phoneNav"+(i-4)).css(force_visible);
+				console.log("::", i);
+				switch (i) {
+					case 5: // conectividade
+						break;
+					case 6: // games
+						$("#video-game").get(0).play();
+						break;
+					case 7: // apps
+						break;
+					case 8: // videos
+						$("#video-video").get(0).play();
+						break;
+					case 9: // fotos
+						break;
+					case 10: //audio
+						if (!$('#seletor:checkbox').is(':checked')) {
+							$("#audio").prop("currentTime",0);
+							$("#audio").trigger('play');
+						};
+						break;
+					case 11: // bateria
+						break;
+					case 12: // saideira
+						$("#featureMenu, #featureSwitch, #featureSwitch p").hide();
+						break;
+				};
 			}
 
 			
@@ -196,7 +240,7 @@ var init = function(){
 	
 	
 
-	TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #featureMenu, #featureSwitch, #featureSwitch p, #phoneBt1', {autoAlpha:0});
+	TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #phoneBt1', {autoAlpha:0});
 	TweenMax.set('#scr1,#scr2,#scr3,#scr4,#scr5,#scr6,#scr7,#scr8,#scr9,#scr10, #scr11', {autoAlpha:0});
 	TweenMax.set("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5, #phoneExtras div", {autoAlpha:0});
 	TweenMax.set('#scr1', {autoAlpha:1});
@@ -207,17 +251,17 @@ var init = function(){
 	TweenMax.set(".text-g, .extra-g", {autoAlpha:0});
 	
 	$("body").show();
-	TweenMax.fromTo("body", 1, {autoAlpha:0}, {autoAlpha:1, delay: 1, onStart:function(){
+	TweenMax.fromTo("body", 1, {autoAlpha:0}, {autoAlpha:1, delay: 0.1, onStart:function(){
 		//initParticles();
 		$('body').scrollTop(0); 
 		scrollController.scrollPos(0);
-		TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #featureMenu, #featureSwitch, #featureSwitch p, #phoneBt1', {autoAlpha:0});
+		TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #featureSwitch p, #phoneBt1', {autoAlpha:0});
 		TweenMax.set("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5, #phoneExtras div", {autoAlpha:0});
 		TweenMax.set('#scr1', {autoAlpha:1});
 	}, onComplete:function(){
 		$('#introMovie').get(0).play();
 		scrollController.scrollPos(0);
-		TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #featureMenu, #featureSwitch, #featureSwitch p, #phoneBt1', {autoAlpha:0});
+		TweenMax.set('.contentBlock, .contentBlock p, #phoneExtras, #phoneParts, #phoneBt1', {autoAlpha:0});
 		TweenMax.set("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5, #phoneExtras div", {autoAlpha:0});
 		TweenMax.set('#scr1', {autoAlpha:1});
 		TweenMax.set("#particles", {autoAlpha:0});
@@ -253,8 +297,8 @@ var initNav = function(){
 			scrollController.scrollTo(id/*, forca*/);
 			$("#audio").trigger('pause');
 			$("#audio").prop("currentTime",0);
-			$("#video-video").get(0).pause();
-			$("#video-game").get(0).pause();
+			// $("#video-video").get(0).pause();
+			// $("#video-game").get(0).pause();
 
 			// update the URL
 			/*
@@ -279,15 +323,14 @@ var initNav = function(){
 	var $trigger10    = $("#trigger10");
 	var $trigger11    = $("#trigger11");
 	var $trigger12    = $("#trigger12");
-	var $videogame    = $("#video-game");
-	var $videovideo   = $("#video-video");
-	var $audio        = $("#audio");
 	var $bullets      = $("#bullets ul li a");
 	var $nav1         = $("#navItem1");
 	var $nav2         = $("#navItem2");
 	var $nav3         = $("#navItem3");
 	var $nav4         = $("#navItem4");
 	var $contentBlock = $(".contentBlock");
+	var $videogame    = $("#video-game");
+	var $videovideo   = $("#video-video");
 
 	var tIds = [];
 	$trigger.each(function(trig, i){
@@ -326,7 +369,7 @@ var initNav = function(){
 			};
 		};
 
-		$audio.trigger('pause');
+		// $audio.trigger('pause');
 
 		//quando parar o scroll
 		clearTimeout($.data(this, 'scrollTimer'));
@@ -354,8 +397,6 @@ var initNav = function(){
 	    	console.log(currentTrigger);
 
 	    	// default actions
-				$videogame.get(0).pause();
-				$videovideo.get(0).pause();
 				$bullets.removeClass("selected");
 
 	    	// coloque os trackers do analytics
@@ -407,14 +448,6 @@ var initNav = function(){
 								_gaq.push(['_trackEvent', 'conheca', 'apps', 'snapdragon']);
 							} else {
 								_gaq.push(['_trackEvent', 'conheca', 'apps', 'outras marcas']);
-							}
-
-							// VIDEO
-							// toca o video de games no ponto certo
-							if(!$body.hasClass('generico')) {
-								$videogame.get(0).play();
-							}else{
-								$videogame.get(0).pause();
 							}
 
     					$nav2.addClass("selected");
@@ -478,19 +511,16 @@ var initNav = function(){
 
 				// toca o video de games no ponto certo
 				
-				if(!$body.hasClass('generico')) {
-					if(currPos >= $trigger10.offset().top && currPos < $trigger11.offset().top-10){
-						$videovideo.get(0).play();
-					}
+				// if(!$body.hasClass('generico')) {
+					// if(currPos >= $trigger10.offset().top && currPos < $trigger11.offset().top-10){
+					// }
 					/** 
 					 * Função está duplicada com o item no case 7
 					 */
 					// toca o video no ponto certo
-					if(currPos >= $trigger10.offset().top+100 && currPos <= $trigger11.offset().top-20 ){
-						$audio.prop("currentTime",0);
-						$audio.trigger('play');
-					}
-				};
+					// if(currPos >= $trigger10.offset().top+100 && currPos <= $trigger11.offset().top-20 ){
+					// }
+				// };
 
 
 				/**
@@ -529,21 +559,21 @@ var initNav = function(){
 function changeAttributes() {
 	if ($('#seletor:checkbox').is(':checked')) {
 		$('body').addClass('generico');
-		TweenMax.to(".text-s, .extra-s", 0.2, {autoAlpha:0, ease:Strong.easeOut, onComplete: function(){
+		TweenMax.to(".text-s, .extra-s", 0.01, {autoAlpha:0, ease:Strong.easeOut, onComplete: function(){
 			$(".text-s, .extra-s").hide();
 			$(".text-g, .extra-g").show();
-			TweenMax.to(".text-g, .extra-g", 0.4, {autoAlpha:1});	
+			TweenMax.to(".text-g, .extra-g", 0.01, {autoAlpha:1});	
 		}});
-		$("#audio").trigger('pause');
-		$("#audio").prop("currentTime",0);
-		$("#video-video").get(0).pause();
-		$("#video-game").get(0).pause();
+		$audio.trigger('pause');
+		$audio.prop("currentTime",0);
+		// $("#video-video").get(0).pause();
+		// $("#video-game").get(0).pause();
 	} else {
 		$('body').removeClass('generico');
-		TweenMax.to(".text-g, .extra-g", 0.2, {autoAlpha:0, ease:Strong.easeOut, onComplete: function(){
+		TweenMax.to(".text-g, .extra-g", 0.01, {autoAlpha:0, ease:Strong.easeOut, onComplete: function(){
 			$(".text-g, .extra-g").hide();
 			$(".text-s, .extra-s").show();
-			TweenMax.to(".text-s, .extra-s", 0.4, {autoAlpha:1});	
+			TweenMax.to(".text-s, .extra-s", 0.01, {autoAlpha:1});	
 		}});
 	}
 }
