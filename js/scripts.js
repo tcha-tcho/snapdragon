@@ -7,14 +7,24 @@ var initialized = [];
 var currentTrigger = -1;
 var prevPos = 0;
 var currPos = 0;
+var hidden        = false
+var tops_ready    = false
 
 var $videogame    = $("#video-game");
 var $videovideo   = $("#video-video");
 var $audio        = $("#audio");
 
+var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
+
 
 
 var init = function(){
+
+	// ajustes Firefox
+	if (is_firefox) {
+		$("#featureMenu").css({top: "26%"})
+	};
+
 	screenMaxWidth = Math.round($(window).height()*1.667);
 	$("#phoneBt1").width(screenMaxWidth*0.09);
 	$('.trigger').height($(window).height()*0.7);
@@ -44,7 +54,7 @@ var init = function(){
 	tweens[1].insert(TweenMax.fromTo("#scr1 h1", 0.5, {x:0, autoAlpha: 1}, {x:-200, autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#scr1 #logo img", 0.5, {x:0, autoAlpha: 1}, {x:+200, autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#label-publieditorial", 0.5, {autoAlpha: 1}, {autoAlpha: 0}),0); // vinicius
-	tweens[1].insert(TweenMax.fromTo("#phoneBt1", 0.1, {autoAlpha:0}, {autoAlpha:1}),0);
+	tweens[1].insert(TweenMax.fromTo("#phoneBt1", 1, {autoAlpha:0}, {autoAlpha:1}),0);
 	tweens[1].insert(TweenMax.fromTo("#smartphone img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
 	tweens[1].insert(TweenMax.fromTo("#hand img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
 	tweens[1].insert(TweenMax.fromTo("#background", 0.3, {width:"100%"}, {width:screenMaxWidth, "transform-origin": "50% 50%", ease:Linear.easeNone}),0);
@@ -166,6 +176,7 @@ var init = function(){
 		
 
 	var force_visible = {display: "block", visibility: "visible", opacity: "1"};
+	var force_invisible = {display: "none", visibility: "hidden", opacity: "0"};
 
 	for(var i=0; i< tweens.length; i++){
 		var tw = tweens[i];
@@ -186,12 +197,19 @@ var init = function(){
 		});
 		scenes[i].on("enter", function(){
 			var i = scenes.indexOf(this);
+			console.log("scene:", i)
 			
 			$(".feature").hide();
 			$("#phoneExtras div").hide();
 			$("#audio").trigger('pause');
 			$(".phonenav").hide();
 			$("#video-video, #video-game").get(0).pause();
+
+			if (i > 2) {
+				$('#introMovie').get(0).pause(); // economia de recursos 
+			} else {
+				$('#introMovie').get(0).play(); // economia de recursos 
+			}
 
 			if(i >=5 && i<=12){
 				$("#featureMenu, #featureSwitch, #featureSwitch p").show();
@@ -202,7 +220,6 @@ var init = function(){
 				$("#phoneExtras").css(force_visible);
 				$("#icon"+(i-4)).css(force_visible);
 				$("#phoneNav"+(i-4)).css(force_visible);
-				console.log("::", i);
 				switch (i) {
 					case 5: // conectividade
 						break;
@@ -230,6 +247,21 @@ var init = function(){
 				};
 			}
 
+			if (i > 12 && tops_ready) {
+				$("#scr11").show()
+			}
+
+			if (is_firefox) {
+				if (i < 2) {
+					$("#hand").hide();
+					$("#smartphone").hide();
+				} else {
+					if (tops_ready) {
+						$("#hand").show();
+						$("#smartphone").show();
+					}
+				}
+			}
 			
 		});
 		
@@ -294,9 +326,14 @@ var initNav = function(){
 
 		if ($(id).length > 0) {
 			e.preventDefault();
-			scrollController.scrollTo(id/*, forca*/);
-			$("#audio").trigger('pause');
-			$("#audio").prop("currentTime",0);
+			if (id == "#trigger2") {
+				// $document.scrollTop($(id).offset().top + 270)
+				// scrollController.scrollTo(id/*, forca*/);
+			} else {
+				scrollController.scrollTo(id/*, forca*/);
+				// $("#audio").trigger('pause');
+				// $("#audio").prop("currentTime",0);
+			}
 			// $("#video-video").get(0).pause();
 			// $("#video-game").get(0).pause();
 
@@ -339,8 +376,6 @@ var initNav = function(){
 	
 	var trigger_tops = [];
 	var len_triggers = $trigger.length;
-	var tops_ready   = false
-	var hidden       = false
 
 	$document.on("scroll", function (e) {
 		// caching tops
@@ -393,8 +428,6 @@ var initNav = function(){
 				}
 
 				prevPos = currPos;
-
-	    	console.log(currentTrigger);
 
 	    	// default actions
 				$bullets.removeClass("selected");
