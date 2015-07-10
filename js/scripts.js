@@ -318,6 +318,7 @@ var initParticles = function(){
 }
 
 var initNav = function(){
+	$("#featureMenu, #featureSwitch, #featureSwitch p").hide();
 
 	// change behaviour of controller to animate scroll instead of jump
 	scrollController.scrollTo(function (newpos) {
@@ -379,6 +380,8 @@ var initNav = function(){
 	
 	var trigger_tops = [];
 	var len_triggers = $trigger.length;
+
+	$nav1.addClass("selected");
 
 	$document.on("scroll", function (e) {
 		// caching tops
@@ -445,7 +448,7 @@ var initNav = function(){
 							$nav1.addClass("selected");
 			        break;
 			    case 1:
-    					$nav2.addClass("selected");
+							$nav1.addClass("selected");
 			        break;
 			    case 2:
     					// tela 'conheça'
