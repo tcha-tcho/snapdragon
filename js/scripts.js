@@ -122,7 +122,6 @@ var init = function(){
 			if($("#phoneNav"+(i-4)).length){
 				tweens[i].insert(TweenMax.to("#phoneNav"+(i-4), 0.1, {autoAlpha:1}), 0);
 			}
-			//tweens[i].insert(TweenMax.to(".contentBlock:not(#scr10, #scr11)", 0.1, {autoAlpha:0}),0);
 	}
 		
 	tweens[12] = new TimelineMax();
@@ -183,6 +182,8 @@ var init = function(){
 			if(i >=5 && i<=12){
 				$("#featureMenu ul li a").removeClass("selected");
 				$("#nav"+(i-4)).addClass("selected");
+				// $(".feature").hide();
+				// $("#scr"+(i-2)).show();
 			}
 
 			
