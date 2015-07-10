@@ -39,30 +39,37 @@ var init = function(){
 	tweens[1].insert(TweenMax.fromTo("#scr1 #logo img", 0.5, {x:0, autoAlpha: 1}, {x:+200, autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#label-publieditorial", 0.5, {autoAlpha: 1}, {autoAlpha: 0}),0); // vinicius
 	tweens[1].insert(TweenMax.fromTo("#phoneBt1", 0.1, {autoAlpha:0}, {autoAlpha:1}),0);
-	tweens[1].insert(TweenMax.fromTo("#smartphone img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
-	tweens[1].insert(TweenMax.fromTo("#hand img", 1, {height: "2000%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
+	tweens[1].insert(TweenMax.fromTo("#smartphone img", 1, {height: "1300%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
+	tweens[1].insert(TweenMax.fromTo("#hand img", 1, {height: "1300%"}, {height:"100%", "transform-origin": "50% 50%", ease:Linear.easeNone}),0.3);
 	tweens[1].insert(TweenMax.fromTo("#background", 0.3, {width:"100%"}, {width:screenMaxWidth, "transform-origin": "50% 50%", ease:Linear.easeNone}),0);
 	tweens[1].insert(TweenMax.fromTo("#bgVideo1", 0.3, {width:"100%"},{width:screenMaxWidth*0.14, "transform-origin": "50% 50%", ease:Linear.easeNone, delay:1}),0);
 	tweens[1].insert(TweenMax.fromTo("#bgVideo1", 0.1, {top:"50%", height: "100%"}, {top:"49%", height:"40%", "transform-origin": "50% 50%", ease:Linear.easeNone, delay:1.2}),0);
-	tweens[1].insert(TweenMax.to("#scr2, #scr2 p", 1, {autoAlpha:1}), 1);
+	// tweens[1].insert(TweenMax.to("#scr2, #scr2 p", 1, {autoAlpha:1}), 1);
 	
 	//tweens[1].insert(TweenMax.to("#featureMenu, #featureSwitch, #phoneExtras", 0.1, {autoAlpha:0}), 0);
 	
 	tweens[2] = new TimelineMax();
-	tweens[2].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}), 0);
+	tweens[2].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras, #phoneParts", {autoAlpha:0}), 0);
 	tweens[2].insert(TweenMax.fromTo("#scr1", 0.1, {autoAlpha:1}, {autoAlpha:0}),0.3);
+	tweens[2].insert(TweenMax.fromTo("#scr2", 0.5, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.fromTo("#bgVideo1", 0.5, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.fromTo("#hand", 1, {autoAlpha:1}, {autoAlpha:0}),0);
-	tweens[2].insert(TweenMax.fromTo("#scr2", 0.5, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.fromTo("#phoneBt1", 0.2, {autoAlpha:1}, {autoAlpha:0}),0.3);
 	tweens[2].insert(TweenMax.to(".contentBlock", 0.1, {autoAlpha:0}),0);
 	
+
 	
 	tweens[3] = new TimelineMax()
 		.to(".contentBlock", 0.01, {autoAlpha:0})
 		.to("#featureMenu, #featureSwitch, #phoneExtras", 0.1, {autoAlpha:0})
-		.fromTo("#phoneParts", 0.2, {width: "4%", autoAlpha:0}, {width: "4%", autoAlpha:1})
-		.fromTo("#background", 0.2, {autoAlpha:1}, {autoAlpha:0}, "-=0.2")
+		//problem with phone not well mounted
+		.to("#phoneBack", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
+		.to("#phoneBoard", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
+		.to("#phoneFront", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
+		.to("#phoneScreen", 0.1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"})
+
+		.fromTo("#background", 0.01, {autoAlpha:1}, {autoAlpha:0}, "-=0.01")
+		.fromTo("#phoneParts", 0.01, {width: "4%", autoAlpha:0}, {width: "4%", autoAlpha:1})
 		.fromTo("#phoneBack", 1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"}, 
 			{scaleX: 0.9, skewX:"60deg", skewY:"-30deg", transformOrigin: "50% 50%", top: "16%"})
 		.fromTo("#phoneBoard", 1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"}, 
@@ -80,12 +87,12 @@ var init = function(){
 		.fromTo("#phoneSnapdragon", 1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"},
 			{scaleX: 0.9, skewX:"60deg", skewY:"-30deg", transformOrigin: "50% 50%", top: "15%"}, "-=1")
 		.fromTo("#phoneProcessor", 1, {left: "43%", scaleX: 1, skewX:"0deg", skewY:"0deg", transformOrigin: "50% 50%", top: "0%"},
-			{scaleX: 0.9, skewX:"60deg", skewY:"-30deg", transformOrigin: "50% 50%", top: "15%"}, "-=1");
-		tweens[3].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}));
-		//tweens[3].insert(TweenMax.set(".contentBlock", {autoAlpha:0}));
+			{scaleX: 0.9, skewX:"60deg", skewY:"-30deg", transformOrigin: "50% 50%", top: "15%"}, "-=1")
+		.to(".contentBlock", 0.01, {autoAlpha:0})
+		// tweens[3].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}));
 		
 	tweens[4] = new TimelineMax()
-		.to(".contentBlock", 0.05, {autoAlpha:0})
+		.to(".contentBlock", 0.01, {autoAlpha:0})
 		.to("#phoneBack", 1, {top: "25%"}, "-=0.2")
 		.to("#phoneBoard", 1, {top: "15%"}, "-=1")
 		.to("#phoneFront", 1, {top: "5%", alpha:0.8}, "-=1")
@@ -93,7 +100,7 @@ var init = function(){
 		.to("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5", 1, {top: "-5%"}, "-=1")
 		.to("#phoneSnapdragon", 1, {top: "15%"}, "-=1")
 		.to("#phoneProcessor", 1, {top: "15%"}, "-=1")
-		.to(".contentBlock", 0.05, {autoAlpha:0});
+		.to(".contentBlock", 0.01, {autoAlpha:0})
 		//tweens[4].insert(TweenMax.set("#featureMenu, #featureSwitch, #phoneExtras", {autoAlpha:0}), 0);
 	
 	// como essas partes são meio repetidas usei
@@ -193,6 +200,7 @@ var init = function(){
 	TweenMax.set("#phoneNav1, #phoneNav2, #phoneNav4, #phoneNav5, #phoneExtras div", {autoAlpha:0});
 	TweenMax.set('#scr1', {autoAlpha:1});
 
+
 	$(".text-g, .extra-g").hide();
 	TweenMax.set(".text-s, .extra-s", {autoAlpha:1});
 	TweenMax.set(".text-g, .extra-g", {autoAlpha:0});
@@ -261,23 +269,24 @@ var initNav = function(){
 	 * pode diminuir a performance
 	 * @type {jQuery}
 	 */
-	var $document   = $(document);
-	var $body       = $("body");
-	var $window     = $(window);
-	var $trigger    = $(".trigger");
-	var $trigger1   = $("#trigger1");
-	var $trigger2   = $("#trigger2");
-	var $trigger10  = $("#trigger10");
-	var $trigger11  = $("#trigger11");
-	var $trigger12  = $("#trigger12");
-	var $videogame  = $("#video-game");
-	var $videovideo = $("#video-video");
-	var $audio      = $("#audio");
-	var $bullets    = $("#bullets ul li a");
-	var $nav1       = $("#navItem1");
-	var $nav2       = $("#navItem2");
-	var $nav3       = $("#navItem3");
-	var $nav4       = $("#navItem4");
+	var $document     = $(document);
+	var $body         = $("body");
+	var $window       = $(window);
+	var $trigger      = $(".trigger");
+	var $trigger1     = $("#trigger1");
+	var $trigger2     = $("#trigger2");
+	var $trigger10    = $("#trigger10");
+	var $trigger11    = $("#trigger11");
+	var $trigger12    = $("#trigger12");
+	var $videogame    = $("#video-game");
+	var $videovideo   = $("#video-video");
+	var $audio        = $("#audio");
+	var $bullets      = $("#bullets ul li a");
+	var $nav1         = $("#navItem1");
+	var $nav2         = $("#navItem2");
+	var $nav3         = $("#navItem3");
+	var $nav4         = $("#navItem4");
+	var $contentBlock = $(".contentBlock");
 
 	var tIds = [];
 	$trigger.each(function(trig, i){
@@ -287,6 +296,7 @@ var initNav = function(){
 	var trigger_tops = [];
 	var len_triggers = $trigger.length;
 	var tops_ready   = false
+	var hidden       = false
 
 	$document.on("scroll", function (e) {
 		// caching tops
@@ -299,16 +309,21 @@ var initNav = function(){
 
 		currPos = $document.scrollTop();
 
-		/*
-		Essa parte está conflitando com o Tween feito para a Cena
+		/**
+		 * O framework apresenta falha grave no funcionamento
+		 * Reparo de última hora
 		 */
-		// if(currPos < $trigger1.offset().top-80000){
-		// 	TweenMax.to(".contentBlock:not(#scr1)", 0.05, {autoAlpha:0});
-		// 	TweenMax.to("#scr1", 0.05, {autoAlpha:1});
-		// }else if(currPos < $trigger2.offset().top+20){
-			// TweenMax.to(".contentBlock:not(#scr1, #scr2)", 0.05, {autoAlpha:0});
-			// TweenMax.to("#scr2", 0.05, {autoAlpha:1});
-		// }
+		if (currPos > 1800 && currPos < 2300) {
+			if (!hidden) { // não chamar continuamente o hide() show()
+				$contentBlock.hide();
+				hidden = true;
+			}
+		} else {
+			if (hidden) {
+				$contentBlock.show();
+				hidden = false;
+			};
+		};
 
 		$audio.trigger('pause');
 
@@ -344,7 +359,7 @@ var initNav = function(){
 
 	    	// coloque os trackers do analytics
 	    	/*
-	    	Usar o switch ao invez do ifelse pela performance
+	    	Usar o switch não o ifelse, pela performance
 	    	 */
 	    	switch(currentTrigger) {
 			    case 0:

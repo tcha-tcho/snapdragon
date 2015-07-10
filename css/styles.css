@@ -159,6 +159,18 @@ a:focus {
 	z-index:99999;
 }
 
+#scroll_down_arrow {
+  position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  bottom: 20px;
+  width: 100%;
+  pointer-events: none;
+}
+#scroll_down_arrow img {
+  margin: 0 auto;
+  width: 20px;
+}
 
 
 #trigger0{ height:200px;}
@@ -839,6 +851,11 @@ body.generico #phoneSnapdragon {
   position: fixed;
   width: 120px;
 }
+
+#phoneBack, #phoneBoard, #phoneFront, #phoneScreen {
+  left: "43%"; scaleX: 1; skewX:"0deg"; skewY:"0deg"; transformOrigin: "50% 50%"; top: "0%";
+}
+
 
 ::selection {
   background: #c12f37; /* WebKit/Blink Browsers */
