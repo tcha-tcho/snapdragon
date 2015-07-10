@@ -208,6 +208,8 @@ var init = function(){
 			if (i > 2) {
 				$('#introMovie').get(0).pause(); // economia de recursos 
 			} else {
+				$('#txtFantasma').css(force_visible);
+				$('#phoneBt1').css(force_visible);
 				$('#introMovie').get(0).play(); // economia de recursos 
 			}
 
