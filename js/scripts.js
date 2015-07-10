@@ -15,8 +15,7 @@ var $videovideo   = $("#video-video");
 var $audio        = $("#audio");
 
 var is_firefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
-
-
+var is_ie = (/Windows|MSIE|Trident/i).test(navigator.userAgent || navigator.vendor || window.opera);
 
 var init = function(){
 
@@ -255,7 +254,7 @@ var init = function(){
 				$("#scr11").show()
 			}
 
-			if (is_firefox) {
+			if (is_firefox || is_ie) {
 				if (i < 2) {
 					$("#hand").hide();
 					$("#smartphone").hide();

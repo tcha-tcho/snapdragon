@@ -188,7 +188,7 @@ var utag_data={"ad_site_page":"techtudo/home","vertical":"","site_template_ideal
     
     <div class="fullScreen" id="background">
     	<div id="bgVideo1">
-        	<video id="introMovie" width="100%" height="100%" class="video-js vjs-default-skin" preload="auto" autoplay loop muted>
+        	<video id="introMovie" width="100%" height="100%" style="background-color: transparent;" class="video-js vjs-default-skin" preload="auto" autoplay loop muted>
                 <source src="video/bullet-train-2.mp4" type='video/mp4' />
                 <source src="video/bullet-train-2.ogv" type='video/ogg' />
             </video>
@@ -226,7 +226,7 @@ var utag_data={"ad_site_page":"techtudo/home","vertical":"","site_template_ideal
             <img class="extra-s" src="image/screen-1s.png" />
         </div>
         <div id="phoneNav2" class="bgImg phonenav">
-            <video id="video-game" width="100%" height="100%" class="extra-s video-js vjs-default-skin" preload="auto" autoplay loop muted>
+            <video id="video-game" width="100%" height="100%" style="background-color: transparent;" class="extra-s video-js vjs-default-skin" preload="auto" autoplay loop muted>
                 <source src="video/game-vertical.mp4" type='video/mp4' />
                 <source src="video/game-vertical.ogv" type='video/ogg' />
             </video>
@@ -234,7 +234,7 @@ var utag_data={"ad_site_page":"techtudo/home","vertical":"","site_template_ideal
             <img class="extra-g" src="image/screen-2g.png" />
         </div>
         <div id="phoneNav4" class="bgImg phonenav">
-            <video id="video-video" width="100%" height="100%" class="extra-s video-js vjs-default-skin" preload="auto" autoplay loop muted>
+            <video id="video-video" width="100%" height="100%" style="background-color: transparent;" class="extra-s video-js vjs-default-skin" preload="auto" autoplay loop muted>
                 <source src="video/video-vertical.mp4" type='video/mp4' />
                 <source src="video/video-vertical.ogv" type='video/ogg' />
             </video>
@@ -246,10 +246,15 @@ var utag_data={"ad_site_page":"techtudo/home","vertical":"","site_template_ideal
             <img class="extra-g" src="image/screen-5s.png" />
         </div>
         <div id="phoneNav6" class="bgImg phonenav">
-            <audio id="audio">
+            <audio preload="auto" autostart="0" id="audio">
               <source src="./audio/audio.ogg" type="audio/ogg">
               <source src="./audio/audio.mp3" type="audio/mpeg">
             </audio>
+            <script>
+                var audio = document.getElementById("phoneNav6");
+                audio.autoplay = false;
+                audio.load();
+            </script>
         </div>
         <div id="phoneExtras" class="bgImg animated infinite pulse"><!-- animated infinite pulse -->
             <div id="icon1">
