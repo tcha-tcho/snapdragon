@@ -24,11 +24,17 @@ var init = function(){
 		$("#featureMenu").css({top: "26%"})
 	};
 
+	//ajustes Internet Explorer
+	if (is_ie) {
+		$("body").addClass("is_ie");
+	}
+
 	screenMaxWidth = Math.round($(window).height()*1.667);
 	$("#phoneBt1").width(screenMaxWidth*0.09);
 	$('.trigger').height($(window).height()*0.7);
 	$('.triggerHolder').height($('.trigger').length*($(window).height()*0.7));
 	$("#hand, #smartphone").width(screenMaxWidth);
+	$(".feature").hide();
 	
 	
 	scenes = [];
